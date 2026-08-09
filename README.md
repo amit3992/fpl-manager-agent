@@ -33,6 +33,7 @@ fpl-cli (installed on droplet, authenticated to fantasy.premierleague.com)
 | `SETUP.md` | Step-by-step droplet provisioning |
 | `agent/SYSTEM_PROMPT.md` | Persona + fpl-cli operating rules for the agent |
 | `cron/jobs.md` | Scheduled jobs to create (deadline/price/injury alerts) |
+| `docs/ARCHITECTURE.md` | Mermaid diagram + trust boundaries |
 | `.gitignore` | Keeps secrets out of git |
 
 ## Safety model
