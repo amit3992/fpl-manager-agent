@@ -12,7 +12,7 @@ Photon (managed iMessage relay — no Mac required)
    │  gRPC stream (persistent, no public URL/webhook)
    ▼
 Hermes Agent gateway (systemd service on DO droplet 64.23.135.50)
-   │  model: deepseek/deepseek-v4-flash via OpenRouter
+   │  model: deepseek-v4-flash via Ollama Cloud (provider `ollama-cloud`)
    │  shell tool
    ▼
 fpl-cli (installed on droplet, authenticated to fantasy.premierleague.com)
@@ -44,6 +44,6 @@ See `agent/SYSTEM_PROMPT.md` to relax this to full auto-execute.
 
 ## Secrets (never committed)
 
-- `OPENROUTER_API_KEY` — set on the droplet (`~/.hermes/.env`)
+- `OLLAMA_API_KEY` — set on the droplet (`~/.hermes/.env`)
 - FPL email/password — set on the droplet via `fpl init` (`~/.config/fpl-cli/config.json`)
 - Photon tokens — written by `hermes photon setup` (`~/.hermes/.env`)

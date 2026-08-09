@@ -1,7 +1,7 @@
 # Scheduled jobs
 
 Create after SETUP.md steps 3–4. Delivery target: the Photon iMessage line
-(origin channel). All jobs pinned to `deepseek/deepseek-v4-flash`.
+(origin channel). All jobs pinned to `deepseek-v4-flash` (Ollama Cloud).
 
 > Cron jobs are read-only by policy — they recommend, never `--confirm`.
 

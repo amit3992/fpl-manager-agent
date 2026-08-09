@@ -33,11 +33,11 @@ fpl doctor   # must be green
 
 ```bash
 pipx install hermes-agent    # or per https://hermes-agent.nousresearch.com/docs
-hermes setup                 # provider: openrouter, model: deepseek/deepseek-v4-flash
-hermes config set cron.model deepseek/deepseek-v4-flash   # pin cron spend too
+hermes setup                 # provider: ollama-cloud, model: deepseek-v4-flash
+hermes config set cron.model deepseek-v4-flash            # pin cron model too
 ```
 
-`OPENROUTER_API_KEY` goes in `~/.hermes/.env` — **ask user for the key at this step.**
+`OLLAMA_API_KEY` (from ollama.com/settings/keys) goes in `~/.hermes/.env` — **ask user for the key at this step.**
 
 ## 4. iMessage via Photon (~10 min)
 
