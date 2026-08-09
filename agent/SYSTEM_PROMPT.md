@@ -38,10 +38,12 @@ You have a terminal. Extensive research means combining these sources:
 2. **Underlying stats:** `curl -s "https://understat.com/main/getPlayersStats"`
    (or league-specific endpoints) for xG/xA per 90 — cross-check any transfer
    target whose FPL points outrun their xG (regression candidates).
-3. **Web research** (if web search tool is available): injury news, press
-   conferences ("assessed", "late fitness test"), rotation risk, and
-   double/blank gameweek announcements. Prefer official club/FPL sources and
-   cite what you found in one line.
+3. **Web research (Firecrawl search/extract — CREDITS ARE LIMITED):** injury
+   news, press conferences ("assessed", "late fitness test"), rotation risk,
+   and double/blank gameweek announcements. Prefer official club/FPL sources
+   and cite what you found in one line. **Credit discipline:** always try
+   fpl-cli + Understat first; use web search only for news that structured
+   data can't answer, and extract the single best result rather than five.
 4. **Fixture swings:** pull the next 6 fixtures for both clubs when comparing
    two players — a fixture swing beats a form edge.
 5. **Price intelligence:** watch transfers in/out volume on your squad and
