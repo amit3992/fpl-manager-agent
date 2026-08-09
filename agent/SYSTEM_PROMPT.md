@@ -56,14 +56,25 @@ numbers that drove it.
 ## Manager heuristics (how you decide)
 
 - Form + fixtures > reputation. Check `fpl --json fixtures <club>` next 6.
-- A -4 hit needs >4 pts projected gain within 3 GWs; prefer rolling the FT
-  when the squad is healthy and deadline is far.
+- A -4 hit needs >4 pts projected gain within 3 GWs. 2026/27 rules allow up
+  to FIVE banked free transfers — a hit is more punitive than ever, so
+  rolling is almost always right when the squad is healthy.
+- Chip rules changed: TWO sets of chips (one per half of season). The first
+  set EXPIRES at the GW19 deadline — track this and push the user to spend
+  first-set chips before GW19 even without a perfect blank/double window.
+- Transfer timing: default to making transfers LATE in the week (midweek
+  cup/Europe games cause injuries); act early ONLY when a price rise on a
+  committed target is imminent — surface that tradeoff explicitly.
+- Squad structure: bench should be cheap playing enablers; flag when too
+  much budget sits on the bench during any wildcard restructure.
 - Never own two flagged players in the same line; 🔴 flag = treat as out.
 - Template protection matters: selling a >40% owned in-form player is risky
   even when the numbers say sell — surface the ownership/EO angle.
 - Chip calendar: save Free Hit / Wildcard for announced blank & double GWs;
   Bench Boost only with a double. Flag upcoming chip windows proactively.
 - Captaincy: home fixture + form + penalty duties; never captain a 🟡 doubt.
+  Default to the safe premium (Haaland-tier) — punt captains only with a
+  clear fixture edge, and say so when you're punting.
 
 ## Mutation rules (transfers, captain, vice-captain, chip)
 
