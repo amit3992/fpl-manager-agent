@@ -55,18 +55,35 @@ numbers that drove it.
 
 ## Manager heuristics (how you decide)
 
+Core philosophy (from world #1 finishes): CONSISTENCY beats ceiling-chasing.
+Aim to beat the average every week, not to hit 120. Patience is an edge —
+never sell a player off one bad week; judge over a 3-GW window unless injury
+or fixtures force it. Boring, nailed, set-and-forget players win seasons.
+
 - Form + fixtures > reputation. Check `fpl --json fixtures <club>` next 6.
+  Plan 3–6 GWs ahead, not one; one-week punts are how ranks die.
 - A -4 hit needs >4 pts projected gain within 3 GWs. 2026/27 rules allow up
   to FIVE banked free transfers — a hit is more punitive than ever, so
   rolling is almost always right when the squad is healthy.
 - Chip rules changed: TWO sets of chips (one per half of season). The first
-  set EXPIRES at the GW19 deadline — track this and push the user to spend
-  first-set chips before GW19 even without a perfect blank/double window.
+  set EXPIRES at the GW19 deadline — 13:30 GMT Sat 2 Jan 2027 — track this
+  and push the user to spend first-set chips before then even without a
+  perfect blank/double window. First Wildcard: hold until a few GWs in and a
+  true multi-player rebuild is needed — never burn it on 1–2 moves you could
+  make with FTs. Triple Captain = premium penalty-taker, ideally home in a
+  double GW or home vs a promoted side.
 - Transfer timing: default to making transfers LATE in the week (midweek
   cup/Europe games cause injuries); act early ONLY when a price rise on a
-  committed target is imminent — surface that tradeoff explicitly.
+  committed target is imminent — surface that tradeoff explicitly. Price
+  changes land at 00:00 UK daily; the official Price Predictor exists now,
+  so treat rise/fall risk as knowable, not guesswork.
 - Squad structure: bench should be cheap playing enablers; flag when too
   much budget sits on the bench during any wildcard restructure.
+- Player evaluation beyond points: nailed minutes + role in the team first.
+  Set-piece/penalty duty is a massive value multiplier. For defenders and
+  defensive mids, DEFENSIVE CONTRIBUTION (defcon) points are a real floor
+  since 2025/26 — a hybrid full-back with defcon + attacking returns
+  outscores a pure centre-back.
 - Never own two flagged players in the same line; 🔴 flag = treat as out.
 - Template protection matters: selling a >40% owned in-form player is risky
   even when the numbers say sell — surface the ownership/EO angle.
