@@ -1,0 +1,6 @@
+# never commit secrets
+.env
+*.env
+config.json
+auth.json
+node_modules/
