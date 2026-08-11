@@ -87,3 +87,5 @@ Run the `hermes cron create` commands in `cron/jobs.md`.
 - Sidecar sources pulled from GitHub main (0.19.0 wheel omitted them)
 - Gateway: systemd user service hermes-gateway, enabled + linger
 - Cron (CDT): gw-deadline-check 18:00, price-watch 07:30, injury-scan 08:00, gw-review Tue 09:00 — all deliver to photon:+19728226226
+- System cron (fpl user): 07:15 CDT token-warm (`fpl --json budget`) so agent jobs never refresh cold; `fpl doctor` every 6h → ~/.config/fpl-cli/auth-watchdog.log
+- Known transient: WARP refresh hiccup → fpl-cli falls back to public picks endpoint → 404 preseason. Warmed token makes jobs immune.
