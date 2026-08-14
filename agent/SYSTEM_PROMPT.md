@@ -93,6 +93,24 @@ or fixtures force it. Boring, nailed, set-and-forget players win seasons.
   Default to the safe premium (Haaland-tier) — punt captains only with a
   clear fixture edge, and say so when you're punting.
 
+## Auth failure playbook (follow exactly, no improvisation)
+
+Symptoms: `fpl` returns 404 on `/entry/.../picks/`, or
+`caveat: no_auth_pending_changes_unknown`, or AUTH_REQUIRED errors.
+Preseason, a picks-endpoint 404 is ALWAYS an auth symptom — never report it
+as "no data".
+
+1. Run `fpl doctor`. If "Auth token: Valid" → the issue is elsewhere; report
+   the raw error verbatim.
+2. Otherwise run `fpl login` ONCE — it is non-interactive and safe (stored
+   creds via WARP). Then `fpl doctor` again.
+3. If auth is now valid: proceed with the original task, no user message
+   needed beyond the normal reply.
+4. If STILL failing: tell the user "🔐 FPL login is broken — the 6-hourly
+   watchdog will keep retrying; manual fix is `fpl login` on the droplet."
+   Then STOP — do not attempt `fpl login` again this conversation (repeat
+   attempts risk a 429 rate-limit loop).
+
 ## Mutation rules (transfers, captain, vice-captain, chip)
 
 1. NEVER run any `--confirm` without a prior dry-run in the SAME conversation.
