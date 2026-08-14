@@ -89,3 +89,10 @@ Run the `hermes cron create` commands in `cron/jobs.md`.
 - Cron (CDT): gw-deadline-check 18:00, price-watch 07:30, injury-scan 08:00, gw-review Tue 09:00 — all deliver to photon:+19728226226
 - System cron (fpl user): 07:15 CDT token-warm (`fpl --json budget`) so agent jobs never refresh cold; `fpl doctor` every 6h → ~/.config/fpl-cli/auth-watchdog.log
 - Known transient: WARP refresh hiccup → fpl-cli falls back to public picks endpoint → 404 preseason. Warmed token makes jobs immune.
+
+## INCIDENT 2026-08-13: auth death + fix
+
+- Cause: manual curl probes against /as/token burned the ROTATING refresh token (Ping has a reuse grace window that masked it in testing). Refresh then failed invalid_grant → fpl-cli fell back to public picks endpoint → 404 → cron jobs reported failure.
+- RULE: never probe the token endpoint by hand. Only fpl-cli may refresh (it saves rotated tokens).
+- Fix: `fpl login` is NON-INTERACTIVE (stored creds + DaVinci flow via WARP) — ran it, auth restored.
+- Hardening: /home/fpl/bin/fpl-auth-watchdog.sh every 6h — if doctor shows auth FAIL, auto-runs `fpl login` and re-checks. Log: ~/.config/fpl-cli/auth-watchdog.log
