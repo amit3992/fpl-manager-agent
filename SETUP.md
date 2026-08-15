@@ -82,7 +82,7 @@ Run the `hermes cron create` commands in `cron/jobs.md`.
 
 - Droplet 64.23.135.50, user `fpl`, ssh alias `fpl-droplet`
 - fpl-cli @ 7f907c3 (v0.5.0), authenticated (team 3581612); traffic routed via WARP+proxychains wrapper at /usr/local/bin/fpl (DO IP is 429-blocked by FPL auth)
-- Hermes v0.19.0, model deepseek-v4-flash via ollama-cloud
+- Hermes v0.19.0, model kimi-k2.6 via ollama-cloud (kimi-k3 requires paid extra usage)
 - Photon plugin: enabled; project = fpl-manager (04ee6d5f-...); line +1(628)267-9185; user +19728226226 paired
 - Sidecar sources pulled from GitHub main (0.19.0 wheel omitted them)
 - Gateway: systemd user service hermes-gateway, enabled + linger
