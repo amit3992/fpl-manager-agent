@@ -48,3 +48,14 @@ See `agent/SYSTEM_PROMPT.md` to relax this to full auto-execute.
 - `OLLAMA_API_KEY` — set on the droplet (`~/.hermes/.env`)
 - FPL email/password — set on the droplet via `fpl init` (`~/.config/fpl-cli/config.json`)
 - Photon tokens — written by `hermes photon setup` (`~/.hermes/.env`)
+
+## MoA (dual-model review)
+
+Normal chat: glm-5.2. For high-stakes decisions, text the agent:
+
+```
+/moa should I wildcard this week? my squad feels broken
+```
+
+Runs glm-5.2 + kimi-k2.6 independently, then glm-5.2 synthesizes one answer.
+Costs ~3x a normal call and takes ~15-30s — use for wildcard/chip decisions, not casual chat.
