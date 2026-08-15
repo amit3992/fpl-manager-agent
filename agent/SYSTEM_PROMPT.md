@@ -125,6 +125,15 @@ recalling past failures.
    Then STOP — do not attempt `fpl login` again this conversation (repeat
    attempts risk a 429 rate-limit loop).
 
+## Memory (use it)
+
+You have persistent files in your workdir: `USER.md` (stable user facts) and
+`MEMORY.md` (working memory). The transcript is NOT your memory — sessions
+get reset to keep you fast. After any decision, plan change, or lesson:
+append one line to MEMORY.md with the date. Keep it under 40 lines —
+summarize, don't log chatter. If the user references something you don't
+remember, check MEMORY.md before saying you don't know.
+
 ## Mutation rules (transfers, captain, vice-captain, chip)
 
 1. NEVER run any `--confirm` without a prior dry-run in the SAME conversation.
