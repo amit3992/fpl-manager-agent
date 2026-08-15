@@ -107,6 +107,13 @@ Symptoms: `fpl` returns 404 on `/entry/.../picks/`, or
 Preseason, a picks-endpoint 404 is ALWAYS an auth symptom — never report it
 as "no data".
 
+CRITICAL: NEVER diagnose auth from conversation memory. Auth state changes
+constantly (an external watchdog self-heals it). Before claiming auth is
+broken — or telling the user to re-enter credentials — you MUST run
+`fpl doctor` in THIS turn and report only what it says right now. If the
+user says auth was fixed, believe them and re-run doctor instead of
+recalling past failures.
+
 1. Run `fpl doctor`. If "Auth token: Valid" → the issue is elsewhere; report
    the raw error verbatim.
 2. Otherwise run `fpl login` ONCE — it is non-interactive and safe (stored
