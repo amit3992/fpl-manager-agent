@@ -103,3 +103,4 @@ Run the `hermes cron create` commands in `cron/jobs.md`.
 - /home/fpl/.config/fpl-cli/env (0600, NOT in git) holds FPL_EMAIL/FPL_PASSWORD.
 - /usr/local/bin/fpl wrapper sources that env file before exec → `fpl login` works non-interactively for agent, cron, and watchdog.
 - Verified: tokens deleted → `fpl login` → doctor 5/5 → team live. Self-heal loop proven end-to-end.
+- Cron jobs PINNED to ollama-cloud/glm-5.2 (jobs.json provider+model). Unpinned jobs are skipped by Hermes' spend guard when the global model changes ("model drift"). After any model switch, either re-pin jobs or update their model_snapshot.
