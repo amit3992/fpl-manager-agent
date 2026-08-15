@@ -96,3 +96,10 @@ Run the `hermes cron create` commands in `cron/jobs.md`.
 - RULE: never probe the token endpoint by hand. Only fpl-cli may refresh (it saves rotated tokens).
 - Fix: `fpl login` is NON-INTERACTIVE (stored creds + DaVinci flow via WARP) — ran it, auth restored.
 - Hardening: /home/fpl/bin/fpl-auth-watchdog.sh every 6h — if doctor shows auth FAIL, auto-runs `fpl login` and re-checks. Log: ~/.config/fpl-cli/auth-watchdog.log
+
+## v0.5.0 credential change (2026-08-14)
+
+- v0.5.0 clears stored password after login; creds now via env vars.
+- /home/fpl/.config/fpl-cli/env (0600, NOT in git) holds FPL_EMAIL/FPL_PASSWORD.
+- /usr/local/bin/fpl wrapper sources that env file before exec → `fpl login` works non-interactively for agent, cron, and watchdog.
+- Verified: tokens deleted → `fpl login` → doctor 5/5 → team live. Self-heal loop proven end-to-end.
