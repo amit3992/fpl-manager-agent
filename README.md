@@ -51,11 +51,12 @@ See `agent/SYSTEM_PROMPT.md` to relax this to full auto-execute.
 
 ## MoA (dual-model review)
 
-Normal chat: glm-5.2. For high-stakes decisions, text the agent:
+Tiered model routing:
 
-```
-/moa should I wildcard this week? my squad feels broken
-```
+| You text | Engine | Use for |
+|---|---|---|
+| plain message | kimi-k2.6 | data lookups: "any injuries?", "my team", prices |
+| `/moa <question>` | kimi-k2.6 + deepseek-v4-flash → glm-5.2 aggregates | judgment calls: wildcard timing, chips, -4 hits, captain coin-flips |
 
-Runs glm-5.2 + kimi-k2.6 independently, then glm-5.2 synthesizes one answer.
-Costs ~3x a normal call and takes ~15-30s — use for wildcard/chip decisions, not casual chat.
+Cron jobs run glm-5.2 (their output IS the recommendation).
+MoA costs ~3x a normal call, ~15-30s.
