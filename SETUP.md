@@ -104,3 +104,8 @@ Run the `hermes cron create` commands in `cron/jobs.md`.
 - /usr/local/bin/fpl wrapper sources that env file before exec → `fpl login` works non-interactively for agent, cron, and watchdog.
 - Verified: tokens deleted → `fpl login` → doctor 5/5 → team live. Self-heal loop proven end-to-end.
 - Cron jobs PINNED to ollama-cloud/glm-5.2 (jobs.json provider+model). Unpinned jobs are skipped by Hermes' spend guard when the global model changes ("model drift"). After any model switch, either re-pin jobs or update their model_snapshot.
+
+## 2026-08-22 watchdog hardening
+
+- Auth is fine; 8h token TTL means transient FAIL windows between watchdog cycles. Watchdog now RE-VERIFIES after `fpl login` and logs "auth RECOVERED" / "auth STILL BROKEN" — log now distinguishes real breaks from transient windows.
+- Note: season live (GW2). Public picks endpoint now returns data for past GWs, so 404 is no longer a reliable auth symptom.
